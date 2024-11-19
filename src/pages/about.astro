@@ -1,10 +1,31 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
+const pageTitle = "About Me";
+
+const identity = {
+    firstName: "Sarah",
+    country: "Canada",
+    occupation: "Technical Writer",
+    hobbies: ["photography", "birdwatching", "baseball"],
+    };
+
+const skills = ["HTML", "CSS", "JavaScript", "React", "Astro", "Writing Docs"];
+
+const happy = true;
+const finished = false;
+const goal = 3;
 ---
 <Layout title="About us">
     <main>
         <h1>About me</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium aliquid assumenda deleniti inventore modi! Architecto atque cupiditate deserunt ea enim expedita explicabo, reprehenderit saepe veritatis?</p>
+        {happy && <p>I am happy now!</p>}
+        {finished && <p>I am done now.</p>}
+        {goal === 3 ? <p>Goal is just 3</p> : <p>Goal is not 3</p>}
+        <ul>
+            {skills.map((skill)=> <li>{skill}</li>)}
+        </ul>
     </main>
 </Layout>
 
